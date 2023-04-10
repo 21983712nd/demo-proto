@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package demo;
+
+option go_package = "demo";
+
+import "google/protobuf/struct.proto";
+
+service Temp {
+    rpc GetTemp(Request) returns (Response) {}
+}
+
+//structure of Request packet
+message Request {
+    string glusrid = 1;
+}
+
+message Response {
+    int64 Allcount = 1;
+}
